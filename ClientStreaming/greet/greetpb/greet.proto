@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ClientStreaming;
+option go_package="ClientStreamingpb";
+
+message Greeting{
+    string first_name =1; // 1 is defined the tag first field in the message
+    string last_name =2; // 2 is defined the tag first field in the message
+}
+
+message LongGreetRequest{
+    Greeting greeting =1;
+}
+
+message LongGreetResponse{
+    string result =1;
+}
+
+
+service LongGreetService{
+    
+    rpc LongGreet(stream LongGreetRequest) returns (LongGreetResponse){};
+}
