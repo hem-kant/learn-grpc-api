@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package computeaverage;
+option go_package="computeaveragepb";
+
+message ComputeAverageRequest{
+    int32 number = 1;
+}
+
+message ComputeAverageResponse{
+    double average =1;
+}
+service ComputeAverageService{
+    rpc ComputeAverage (stream ComputeAverageRequest) returns (ComputeAverageResponse){};
+}
