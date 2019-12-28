@@ -16,3 +16,5 @@ protoc ComputeAverage/ComputeAveragepb/ComputeAverage.proto --go_out=plugins=grp
 protoc Bidi/Bidipb/Bidi.proto --go_out=plugins=grpc:.
 
 protoc Bidi/FindMaximum/findmaximumpb/FindMaximum.proto --go_out=plugins=grpc:.
+
+protoc AdvanceTopics/HandlingErrorAndCodes/calculatorpb/calculator.proto --go_out=plugins=grpc:.

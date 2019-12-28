@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ErrorHandlingCalculator;
+option go_package = "ErrorHandlingCalculatorpb";
+
+message SquareRootRequest{
+    int32 number = 1;
+    
+}
+
+message SquareRootResponse {
+    double number_root =1;
+}
+
+service ErrorHandlingSquareRootService{
+    // Error Handling this RPC while throw an exception if the number is -
+    // The Error being send is of type INVALID_ARGUMENT
+    rpc SquareRoot (SquareRootRequest) returns (SquareRootResponse){};
+}
