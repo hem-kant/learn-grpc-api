@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package greetDeadline;
+option go_package="greetDeadlinepb";
+
+message Greeting{
+    string first_name =1; // 1 is defined the tag first field in the message
+    string last_name =2; // 2 is defined the tag first field in the message
+}
+
+message GreetDeadRequest{
+    Greeting greeting =1;
+}
+
+message GreetDeadResponse{
+    string result =1;
+}
+
+
+service GreetDeadlineService{
+    // Unary Deadline API
+    rpc GreetDeadline(GreetDeadRequest) returns (GreetDeadResponse){};
+}
