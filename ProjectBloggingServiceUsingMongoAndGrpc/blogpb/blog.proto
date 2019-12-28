@@ -1,0 +1,15 @@
+syntax = "proto3";
+package blog;
+option go_package = "blogpb";
+
+
+message Blog{
+    string Id=1;
+    string author_id =2;
+    string title =3;
+    string contact =4;
+}
+
+service BlogService{
+    
+} 
