@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package PrimeNumberDecomposition;
+option go_package = "PrimeNumberDecompositionpb";
+
+message PrimeNumberDecompositionRequest{
+    int64 number = 1;
+}
+
+message PrimeNumberDecompositionResponse {
+    int64 prime_factor=1;
+}
+
+service PrimeNumberDecompositionService{
+
+    rpc PrimeNumberDecomposition (PrimeNumberDecompositionRequest) returns (stream PrimeNumberDecompositionResponse){};
+}
