@@ -20,3 +20,6 @@ protoc Bidi/FindMaximum/findmaximumpb/FindMaximum.proto --go_out=plugins=grpc:.
 protoc AdvanceTopics/HandlingErrorAndCodes/calculatorpb/calculator.proto --go_out=plugins=grpc:.
 
 protoc AdvanceTopics/Deadlines/greetpb/greet.proto --go_out=plugins=grpc:.
+
+protoc AdvanceTopics/Reflection/greet/greetpb/greet.proto --go_out=plugins=grpc:.
+
