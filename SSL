@@ -1,0 +1,20 @@
+# The following command only works on MAC and Linux
+# step 1 Generate Certificate AUTORITY + Trust certificate (ca.cert)
+
+openssl genrsa -passout pass:1111 -des3 -out ca.key 4096
+openssl req -passin pass:1111 -new -x509 -days 365 -key ca.key -out ca.crt -subj "/cn=localhost" 
+
+# step 2 Generate the server Private key (server.key)
+openssl genrsa -passout pass:1111 -des3 -out server.key 4096
+
+# step 3 Get a Certificate signing  request from the ca (server.crt)
+openssl req -passin pass:1111 -new -key server.key -out server.csr -subj "/cn=localhost"
+
+# step 4 Sign the certificate with the CA we created (its called self signing) - server.crt
+openssl x509 -req -passin pass:1111 -days 365 -in server.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out server.crt 
+
+# step 5  convert the server certificate to .pem, format (server.pem)- usable by gRPC
+openssl pkcs8 -topk8 -nocrypt -passin pass:1111 -in server.key -out server.pem
+
+
+# All the files generated after running the commands , are avaliable on gitgub so you dont have to run them agina, but its good to know how to do it.
