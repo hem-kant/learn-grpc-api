@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package bidi;
+option go_package = "bidipb";
+
+message Greeting{
+    string first_name =1; // 1 is defined the tag first field in the message
+    string last_name =2; // 2 is defined the tag first field in the message
+}
+
+message GreetEveryoneRequest{
+     Greeting greeting =1;
+}
+
+message GreetEveryoneResponse {
+    string result =1;
+}
+
+service GreetEveryoneService{
+    rpc GreetEveryone(stream GreetEveryoneRequest) returns (stream GreetEveryoneResponse){};
+}

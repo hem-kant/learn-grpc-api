@@ -12,3 +12,5 @@ protoc PrimeNumberDecomposition/PrimeNumberDecompositionpb/PrimeNumberDecomposit
 
 
 protoc ComputeAverage/ComputeAveragepb/ComputeAverage.proto --go_out=plugins=grpc:.
+
+protoc Bidi/Bidipb/Bidi.proto --go_out=plugins=grpc:.
