@@ -23,3 +23,8 @@ protoc AdvanceTopics/Deadlines/greetpb/greet.proto --go_out=plugins=grpc:.
 
 protoc AdvanceTopics/Reflection/greet/greetpb/greet.proto --go_out=plugins=grpc:.
 
+protoc ProjectBloggingServiceUsingMongoAndGrpc/blogpb/blog.proto --go_out=plugins=grpc:.
+
+bin/mongod --dbpath data/db
+
+go get github.com/mongodb/mongo-go-driver/mongo
